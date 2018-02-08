@@ -202,21 +202,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 335380751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a5fda7d0d9e92468f32bd6dbbf718f, type: 3}
+  m_Script: {fileID: 11500000, guid: 53a6b293126468d4b80d511c3a4633d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _instanceCount: 1000
-  _template: {fileID: 11400000, guid: 2f3e96656444aa24b895cfe3b9d3cc1d, type: 2}
+  _template: {fileID: 11400000, guid: 0ee0ba0f35843e7429d48861b2c82c1f, type: 2}
   _radius: 0.005
   _length: 1
   _spread: 1
   _noiseFrequency: 0.5
   _noiseMotion: {x: 0, y: 0.1, z: 0}
-  _volume: {fileID: 11400000, guid: a4bda0c0f0c3be142be76d77f595adbc, type: 2}
-  _material: {fileID: 2100000, guid: a28f050c68a3c9943ac87aeb69e40adc, type: 2}
-  _gradient: {fileID: 11400000, guid: 856cce886f41a1841b8637b0c897811c, type: 2}
+  _volume: {fileID: 11400000, guid: 299b7325e378dba449f9272ea9235b51, type: 2}
+  _material: {fileID: 2100000, guid: e1952040b110d4048be7249e8099a759, type: 2}
+  _gradient: {fileID: 11400000, guid: d4e42c6bb217ae241a4458b5cb6cc227, type: 2}
   _randomSeed: 0
-  _compute: {fileID: 7200000, guid: 70e8fc98ef3d1974485d153a4e66dbcc, type: 3}
+  _compute: {fileID: 7200000, guid: b9ddd8fe58e7ee54083b0c85b53566ee, type: 3}
 --- !u!4 &335380753
 Transform:
   m_ObjectHideFlags: 0

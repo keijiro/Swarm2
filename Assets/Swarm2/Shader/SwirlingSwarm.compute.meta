@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 1b66724e3dcef3c498c92b24b8cd0fbd
+guid: b9ddd8fe58e7ee54083b0c85b53566ee
 timeCreated: 1495962986
 licenseType: Pro
-ShaderImporter:
-  defaultTextures: []
+ComputeShaderImporter:
+  currentAPIMask: 4
   userData: 
   assetBundleName: 
   assetBundleVariant: 
