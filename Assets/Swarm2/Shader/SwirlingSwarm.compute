@@ -54,17 +54,19 @@ void SwirlingUpdate(uint id : SV_DispatchThreadID)
     // Determine the first point.
     float3 p = RandomPoint(id) * Spread;
     float max_w = SampleVolume(p).w;
+    float3 p3 = p;
 
-    for (uint ii = 0; ii < 10; ii++)
+    for (uint ii = 0; ii < 30; ii++)
     {
         float3 p2 = RandomPoint(id + ii * 0xffff) * Spread;
         float w2 = SampleVolume(p2).w;
         if (w2 < max_w)
         {
-            p = p2;
+            p3 = p2;
             max_w = w2;
         }
     }
+    p = lerp(p, p3, Constraint);
 
     PositionBuffer[id] = float4(p, 0);
 
