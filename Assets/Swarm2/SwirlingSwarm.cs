@@ -68,6 +68,13 @@ namespace Swarm
             get { return _volume; }
         }
 
+        [SerializeField, Range(0, 1)] float _constraint;
+
+        public float constraint {
+            get { return _constraint; }
+            set { _constraint = value; }
+        }
+
         #endregion
 
         #region Material properties
@@ -186,6 +193,7 @@ namespace Swarm
             _compute.SetVector("NoiseOffset", _noiseOffset);
 
         _compute.SetTexture(kernel, "DFVolume", _volume.texture);
+        _compute.SetFloat("Constraint", _constraint);
 
             _compute.SetBuffer(kernel, "PositionBuffer", _positionBuffer);
 

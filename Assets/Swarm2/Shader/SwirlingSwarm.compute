@@ -25,6 +25,7 @@ CBUFFER_START(Params)
     float StepWidth;
     float NoiseFrequency;
     float3 NoiseOffset;
+    float Constraint;
 CBUFFER_END
 
 float Random(float u, float v)
@@ -52,6 +53,19 @@ void SwirlingUpdate(uint id : SV_DispatchThreadID)
 {
     // Determine the first point.
     float3 p = RandomPoint(id) * Spread;
+    float max_w = SampleVolume(p).w;
+
+    for (uint ii = 0; ii < 10; ii++)
+    {
+        float3 p2 = RandomPoint(id + ii * 0xffff) * Spread;
+        float w2 = SampleVolume(p2).w;
+        if (w2 < max_w)
+        {
+            p = p2;
+            max_w = w2;
+        }
+    }
+
     PositionBuffer[id] = float4(p, 0);
 
     for (uint i = 1; i < HistoryLength; i++)
@@ -64,7 +78,7 @@ void SwirlingUpdate(uint id : SV_DispatchThreadID)
     float4 df = SampleVolume(p);
 
     // Apply the boundary condition (distance field) to the first noise field.
-    sn1.xyz = -sn1.xyz * df.w + df.xyz * sn1.w;
+    sn1.xyz = lerp(sn1.xyz, sn1.xyz * saturate(df.w) + df.xyz, Constraint);// * sn1.w;
 
         // Move and store the point.
         p += cross(sn1.xyz, sn2.xyz) * StepWidth;

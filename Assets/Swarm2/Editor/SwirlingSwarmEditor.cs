@@ -20,6 +20,7 @@ namespace Swarm
         SerializedProperty _noiseMotion;
 
         SerializedProperty _volume;
+        SerializedProperty _constraint;
 
         SerializedProperty _material;
         SerializedProperty _gradient;
@@ -44,6 +45,7 @@ namespace Swarm
             _noiseMotion = serializedObject.FindProperty("_noiseMotion");
 
             _volume = serializedObject.FindProperty("_volume");
+            _constraint = serializedObject.FindProperty("_constraint");
 
             _material = serializedObject.FindProperty("_material");
             _gradient = serializedObject.FindProperty("_gradient");
@@ -70,6 +72,7 @@ namespace Swarm
             EditorGUI.indentLevel--;
 
             EditorGUILayout.PropertyField(_volume);
+            EditorGUILayout.PropertyField(_constraint);
 
             EditorGUILayout.PropertyField(_material);
             EditorGUILayout.PropertyField(_gradient);

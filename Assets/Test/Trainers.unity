@@ -209,8 +209,8 @@ MonoBehaviour:
   _template: {fileID: 11400000, guid: a4a4234e5642d634586a7c725b44a537, type: 2}
   _radius: 0.002
   _length: 2
-  _spread: 0.2
-  _noiseFrequency: 3
+  _spread: 0.5
+  _noiseFrequency: 1
   _noiseMotion: {x: 0, y: 0.1, z: 0}
   _volume: {fileID: 11400000, guid: 071eade225ea3a24d8f0bbd8ef93de83, type: 2}
   _material: {fileID: 2100000, guid: e1952040b110d4048be7249e8099a759, type: 2}
