@@ -186,14 +186,13 @@ namespace Swarm
 
             _compute.SetInt("InstanceCount", InstanceCount);
             _compute.SetInt("HistoryLength", HistoryLength);
-            _compute.SetFloat("RandomSeed", _randomSeed);
+            _compute.SetInt("RandomSeed", _randomSeed);
             _compute.SetFloat("Spread", _spread);
             _compute.SetFloat("StepWidth", _length / _template.segments);
             _compute.SetFloat("NoiseFrequency", _noiseFrequency);
             _compute.SetVector("NoiseOffset", _noiseOffset);
-
-        _compute.SetTexture(kernel, "DFVolume", _volume.texture);
-        _compute.SetFloat("Constraint", _constraint);
+            if (_volume != null) _compute.SetTexture(kernel, "DFVolume", _volume.texture);
+            _compute.SetFloat("Constraint", _constraint);
 
             _compute.SetBuffer(kernel, "PositionBuffer", _positionBuffer);
 
